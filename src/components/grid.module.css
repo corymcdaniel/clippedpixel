@@ -2,20 +2,22 @@
 .wrapper {
     display: grid;
     grid-auto-flow: dense;
+    grid-gap: 1rem;
 }
 
 .item {
-    border: 2px solid #132f5c;
     overflow: hidden;
 }
 
 .item::before {
     content: "";
     display: inline-block;
+    /*width: 1px;
+    height: 0;*/
     padding-bottom: calc(100% / (1/1));
 }
 
-.item img {
+.item img, .item > div {
     object-fit: cover;
     height: 100%;
     width: 100%;
@@ -23,7 +25,7 @@
 
 @media screen and (min-width: 768px) {
     .wrapper {
-        grid-template-columns: repeat(8, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         grid-template-rows: 1fr;
     }
 }

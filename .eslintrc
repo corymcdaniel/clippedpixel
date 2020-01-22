@@ -1,0 +1,28 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "strict": 0
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "globals": {
+    "console": false,
+    "require": false,
+    "process": false,
+    "exports": false,
+    "__dirname": false,
+    "module": false,
+    "setInterval": false,
+    "clearInterval": false,
+    "document": false,
+    "window": false,
+    "Promise": false,
+  }
+}
