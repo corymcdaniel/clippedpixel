@@ -20,27 +20,27 @@ const IndexPage = ({ data }) => {
   );
 };
 
-export const query = graphql`
-  {
-    ig: allInstaNode {
-      edges {
-        node {
-          mediaType
-          preview
-          original
-          timestamp
-          caption
-          localFile {
-            childImageSharp {
-              fixed {
-                src
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   {
+//     ig: allInstaNode {
+//       edges {
+//         node {
+//           mediaType
+//           preview
+//           original
+//           timestamp
+//           caption
+//           localFile {
+//             childImageSharp {
+//               fixed {
+//                 src
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 
 export default IndexPage;
