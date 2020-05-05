@@ -1,21 +1,46 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import get from 'lodash.get';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Grid from '../components/grid';
+import { graphql } from 'gatsby';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = ({ data }) => {
+  console.log(data);
+  const igImages = get(data, 'ig.edges', [])
+    .filter(i => i.node.mediaType === 'GraphImage')
+    .map(i => i.node);
 
-export default IndexPage
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Grid igImages={igImages} />
+    </Layout>
+  );
+};
+
+// export const query = graphql`
+//   {
+//     ig: allInstaNode {
+//       edges {
+//         node {
+//           mediaType
+//           preview
+//           original
+//           timestamp
+//           caption
+//           localFile {
+//             childImageSharp {
+//               fixed {
+//                 src
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
+
+export default IndexPage;

@@ -7,6 +7,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(39,30,204);
+  background: linear-gradient(106deg, rgba(39,30,204,1) 0%, rgba(71,166,139,1) 14%, rgba(9,121,53,1) 31%, rgba(0,212,255,1) 100%);
 }
 article,
 aside,
@@ -218,7 +220,7 @@ img {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0;
 }
 h1 {
   margin-left: 0;
